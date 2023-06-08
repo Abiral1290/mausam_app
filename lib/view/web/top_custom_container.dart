@@ -148,14 +148,10 @@ class TopCustomContainerDetails extends StatelessWidget {
                 SizedBox(
                   width: MediaQuery.of(context).size.width/200,
                 ),
-                Positioned(
-                  left: 30,
-                  top: sizes(context).height/52,
-                  child: MausamAppText(
-                    text: '${DateFormat.EEEE().format(value)} ${DateTime.now().hour}:${DateTime.now().minute}',
-                    color:  const Color(0xFFFFFFFF),
-                    fontSize: sizes(context).height/70,fontWeight: FontWeight.bold,
-                  ),
+                MausamAppText(
+                  text: '${DateFormat.EEEE().format(value)} ${DateTime.now().hour}:${DateTime.now().minute}',
+                  color:  const Color(0xFFFFFFFF),
+                  fontSize: sizes(context).height/70,fontWeight: FontWeight.bold,
                 )
               ],
             ),
@@ -178,15 +174,11 @@ class TopCustomContainerDetails extends StatelessWidget {
             SizedBox(
               width: MediaQuery.of(context).size.width/200,
             ),
-            Positioned(
-              left: 30,
-              top: sizes(context).height/52,
-              child: MausamAppText(
-                text: degree,
-                fontSize: textStyle,
-                fontWeight: fontWeight,
-                color: color,
-              ),
+            MausamAppText(
+              text: degree,
+              fontSize: textStyle,
+              fontWeight: fontWeight,
+              color: color,
             ),
             SizedBox(
               width: MediaQuery.of(context).size.width/200,
@@ -199,97 +191,99 @@ class TopCustomContainerDetails extends StatelessWidget {
 
     return Padding(
       padding:   EdgeInsets.all(MediaQuery.of(context).size.width/80),
-      child: Stack(
-        children: [
-          Align(
-              alignment: Alignment.topLeft,
-              child: logoName()
-          ),
-          Align(
-            alignment: Alignment.topCenter,
-            child: SizedBox(
-                width:
-                MediaQuery.of(context).size.width/3,
-                height:
-                MediaQuery.of(context).size.height/22,
-                child:const
-                MausamAppTextField(hint: 'Search for place',)),
-          ),
-          Positioned(
-              left: sizes(context).height/9,
-              top: sizes(context).height/9,
-              child: dateDay()
-          ),
-          Align(
-              alignment: Alignment.center,
-              // left: sizes(context).height/2,
-              // top: sizes(context).height/9.3,
-              child: Column(
-                children: [
-                  imageAsset(),
-                ],
-              )),
-          Align(
-            alignment:const Alignment(0.04,-0.13),
-            child: Image.asset(
-              "assets/asset/unsplash_K-Iog-Bqf8E.png",
-              height: sizes(context).height/8,
+      child: SizedBox(
+        child: Stack(
+          children: [
+            Align(
+                alignment: Alignment.topLeft,
+                child: logoName()
             ),
-          ),
-          Positioned(
-              left: sizes(context).height/9,
-              top: sizes(context).height/4,
-              child: temperature('High','30 Celsius',
+            Align(
+              alignment: Alignment.topCenter,
+              child: SizedBox(
+                  width:
+                  MediaQuery.of(context).size.width/3,
+                  height:
+                  MediaQuery.of(context).size.height/22,
+                  child:const
+                  MausamAppTextField(hint: 'Search for place',)),
+            ),
+            Positioned(
+                left: sizes(context).height/9,
+                top: sizes(context).height/9,
+                child: dateDay()
+            ),
+            Align(
+                alignment: Alignment.center,
+                // left: sizes(context).height/2,
+                // top: sizes(context).height/9.3,
+                child: Column(
+                  children: [
+                    imageAsset(),
+                  ],
+                )),
+            Align(
+              alignment:const Alignment(0.04,-0.13),
+              child: Image.asset(
+                "assets/asset/unsplash_K-Iog-Bqf8E.png",
+                height: sizes(context).height/8,
+              ),
+            ),
+            Positioned(
+                left: sizes(context).height/9,
+                top: sizes(context).height/4,
+                child: temperature('High','30 Celsius',
 
-                sizes(context).height/35, FontWeight.bold,
-                const Color(0xFFFFCF24),)),
-          Positioned(
-              top: sizes(context).height/2.9,
-              left: sizes(context).height/5.5,
-              child: MausamAppText(
-                text: 'Mostly Sunny',
-                color: const  Color(0xFFFFFFFF),
-                fontSize: sizes(context).height/70,fontWeight: FontWeight.bold,
-              )),
-          Positioned(
-              left: sizes(context).width/1.3,
-              top: sizes(context).height/4.3,
-              child: temperature('Low','19 Celcius',
-                sizes(context).height/35, FontWeight.bold,
-               const Color(0xFFE20613),)),
-          Positioned(
-              top: sizes(context).height/3,
-              left: sizes(context).width/1.2,
-              child: MausamAppText(
-                text: 'Sunny',
-                color:const   Color(0xFFFFFFFF),
-                fontSize: sizes(context).height/70,fontWeight: FontWeight.bold,
-              )),
-          Positioned(
-              top: sizes(context).height/2.8,
-              left: sizes(context).width/3.5,
-              child: ConstrainedBox(
-                constraints: BoxConstraints(
-                  maxWidth: sizes(context).width/2,
-                ),
-                child: SingleChildScrollView(
-                  child: Wrap(
-                    //  runSpacing: 0,
-                    children: [
-                      cards(),
-                      cards(),
-                      cards(),
-                      cards(),
-                      cards(),
-                      cards(),
-                      cards(),
-                      cards(),
-
-                    ],
+                  sizes(context).height/35, FontWeight.bold,
+                  const Color(0xFFFFCF24),)),
+            Positioned(
+                top: sizes(context).height/2.9,
+                left: sizes(context).height/5.5,
+                child: MausamAppText(
+                  text: 'Mostly Sunny',
+                  color: const  Color(0xFFFFFFFF),
+                  fontSize: sizes(context).height/70,fontWeight: FontWeight.bold,
+                )),
+            Positioned(
+                left: sizes(context).width/1.3,
+                top: sizes(context).height/4.3,
+                child: temperature('Low','19 Celcius',
+                  sizes(context).height/35, FontWeight.bold,
+                 const Color(0xFFE20613),)),
+            Positioned(
+                top: sizes(context).height/3,
+                left: sizes(context).width/1.2,
+                child: MausamAppText(
+                  text: 'Sunny',
+                  color:const   Color(0xFFFFFFFF),
+                  fontSize: sizes(context).height/70,fontWeight: FontWeight.bold,
+                )),
+            Positioned(
+                top: sizes(context).height/2.8,
+                left: sizes(context).width/3.5,
+                child: ConstrainedBox(
+                  constraints: BoxConstraints(
+                    maxWidth: sizes(context).width/2,
                   ),
-                ),
-              ))
-        ],
+                  child: SingleChildScrollView(
+                    child: Wrap(
+                      //  runSpacing: 0,
+                      children: [
+                        cards(),
+                        cards(),
+                        cards(),
+                        cards(),
+                        cards(),
+                        cards(),
+                        cards(),
+                        cards(),
+
+                      ],
+                    ),
+                  ),
+                ))
+          ],
+        ),
       ),
     );
   }

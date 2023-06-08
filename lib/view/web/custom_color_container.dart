@@ -32,8 +32,7 @@ class CustomColorContainer extends StatelessWidget {
               borderTopRight: MediaQuery.of(context).size.height/10,
               height:  MediaQuery.of(context).size.height/15,
             child: const BottomChildWeb(),)),
-        const Positioned(
-            child:  TopCustomContainer()),
+        const TopCustomContainer(),
       ],
     );
   }
@@ -146,7 +145,7 @@ class MiddleCardWidget extends StatelessWidget {
             child: Column(
               mainAxisAlignment: MainAxisAlignment.start,
               mainAxisSize: MainAxisSize.min,
-              children: <Widget>[
+              children: [
                 MausamAppText(text: time,
                   color:  const Color(0xFFFFFFFF),
                   fontSize: sizes(context).height/82,fontWeight: FontWeight.bold,),
