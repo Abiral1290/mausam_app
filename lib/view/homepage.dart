@@ -15,7 +15,7 @@ class HomePage extends StatelessWidget {
      // backgroundColor:  Color(0xFF0F1320),
       body:    LayoutBuilder(
         builder: (BuildContext context, BoxConstraints constraints) {
-          if (constraints.maxWidth > 600) {
+          if (constraints.maxWidth > 400) {
             return const
             CustomColorContainer();
           } else {

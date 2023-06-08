@@ -281,7 +281,8 @@ class TopCustomContainerDetails extends StatelessWidget {
                       ],
                     ),
                   ),
-                ))
+                )),
+
           ],
         ),
       ),

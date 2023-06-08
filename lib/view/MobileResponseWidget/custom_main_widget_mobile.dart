@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/svg.dart';
 import 'package:mausamapp/controller/weatherController.dart';
+import 'package:mausamapp/view/web/custom_color_container.dart';
 import 'package:provider/provider.dart';
 
 import '../components.dart';
@@ -20,26 +21,7 @@ class CustomMainWidgetMobile extends StatelessWidget {
   Widget build(BuildContext context) {
 
 
-    Widget assetSocialLMedia(String asset,double height){
-      return Padding(
-        padding:  EdgeInsets.all(size(context).height/100),
-        child: SvgPicture.asset("assets/vector/vectorSocialMedia.svg",
-          height: size(context).height/40,),
-      );
-    }
-    Widget socialMedia(){
-      return Row(
-        mainAxisAlignment: MainAxisAlignment.spaceEvenly,
-        children: [
-          assetSocialLMedia("assets/vector/vectorSocialMedia.svg",
-             size(context).height/40,),
-          assetSocialLMedia("assets/vector/vectorSocialMedia.svg",
-            size(context).height/40,),
-          assetSocialLMedia("assets/vector/vectorSocialMedia.svg",
-            size(context).height/40,),
-        ],
-      );
-    }
+
 
     Widget bottomChild(){
       return Column(
@@ -47,7 +29,7 @@ class CustomMainWidgetMobile extends StatelessWidget {
         children: [
           LogoName(imageHeight: size(context).height/30,
             textSize: size(context).height/45,),
-          socialMedia(),
+          SocialMediaIcon(),
           const MausamAppText(text: '© 2023 Mausam. All rights reserved.',color:  Color(0xFFFFFFFF),)
         ],
       );
